@@ -2,6 +2,16 @@
 
 You are given a list of integers and a target. Find the sum of three integers in the list that would be the closest to the target and return it.
 
+## Notes
+
+At first glance, the question reminded me of a similar one I had done a month ago, this older question had you count the distinct k-difference pairs in a list. They were similar in that the sums/difference of multiple integers had to be or be as close to a certain target number. In that question, I had thought to make a seperate list with the elements subtracted from the number k. That way I could reiterate through the original list and look for each item one by one. Though in the end it was not to great of an idea since it took essentially O(n^2) runtime, but it was a good learning experience.
+
+The main difference between this and that question was that I could not create another list of differences. The fact that the sum you computed was the sum of three integers would have made that solution take O(n!) as we had n!/6(n-3)! combinations of sums that would have to be relisted and searched. Therefore it would be faster to just calculate the sums on your own.
+
+Another thought this had brought up to me was that these sum/difference archtype questions generally went one of two ways. Either you somehow speedily compare each possible sum/difference, or there was some underlying relationship the numbers had with each other. Usually if the elements were associated with each other in multiple dimensions, such that they had other variables that allowed us to compare them in another scale, then there was usually a solution that allowed us to easily eliminate unneccessary calculations. In this case, there was nothing to compare but the differences each number had from the target number.
+
+I thought that the fastest way to do this was to have three pointers, with one pointer incrementing from the beginnining and the other two to represent the numbers after the first pointer. This solution worked sometimes, but on issue it had was that sometimes, although a number would get the sum closer to the target, the solution would actually contain the worse off number. And since there was no way of properly ordering the numbers so that continuing calculations would get the sum closer to the target, the algorithm would sometimes miss answers that were more spread out. To fix this I had to sort the list with the Python sort() function. After sorting, bringing the second and third pointer closer together made the sum closer for each unique number that pointer one referenced.
+
 ## Comments
 
 I am writing this for my future self because I felt disappointed in the slow runtime I had somehow managed in doing this problem. Maybe other users had well tuned solutions or maybe I had an off day, but that doesn't change the fact that I feel as if I made a mistake. So from now on if I feel disatisfied with myself, I'll unload my thoughts into a Readme file for future reflections.
