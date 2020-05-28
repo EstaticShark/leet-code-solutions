@@ -1,8 +1,8 @@
-#16 3Sum Closest
+# #16 3Sum Closest
 
 You are given a list of integers and a target. Find the sum of three integers in the list that would be the closest to the target and return it.
 
-##Comments
+## Comments
 
 I am writing this for my future self because I felt disappointed in the slow runtime I had somehow managed in doing this problem. Maybe other users had well tuned solutions or maybe I had an off day, but that doesn't change the fact that I feel as if I made a mistake. So from now on if I feel disatisfied with myself, I'll unload my thoughts into a Readme file for future reflections.
 
